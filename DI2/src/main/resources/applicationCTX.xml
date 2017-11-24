@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.poseidon.di2.BMICalc" id="bmiCalc">
+		<property name="lowWeight">
+			<value>18.5</value>
+		</property>
+		<property name="normal">
+			<value>23</value>
+		</property>
+		<property name="obesity">
+			<value>30</value>
+		</property>
+	</bean>
+	<bean class="com.poseidon.di2.Info" id="info">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="height">
+			<value>175</value>
+		</property>
+		<property name="weight">
+			<value>60</value>
+		</property>
+		<property name="hobby">
+			<list>
+				<value>도적잡기</value>
+				<value>탐관오리잡기</value>
+				<value>분신술</value>
+				<value>나선환</value>
+			</list>
+		</property>
+		<property name="bmiCalc">
+			<ref bean="bmiCalc"/>
+		</property>
+		
+	</bean>
+</beans>
